@@ -236,18 +236,52 @@ func amdLabel(card string, devicePath string, ids map[amdIDKey]string) string {
 		if devID, err := readHexUint(filepath.Join(devicePath, "device")); err == nil {
 			if revID, err := readHexUint(filepath.Join(devicePath, "revision")); err == nil {
 				if name, ok := ids[amdIDKey{deviceID: devID, revisionID: revID}]; ok && name != "" {
-					if slot != "" {
-						return fmt.Sprintf("%s.%s", name, slot)
-					}
-					return name
+					return formatAMDLabel(name, slot, card)
 				}
 			}
 		}
 	}
-	if slot != "" {
-		return fmt.Sprintf("AMD.%s", slot)
+	return formatAMDLabel("AMD", slot, card)
+}
+
+func formatAMDLabel(name string, slot string, card string) string {
+	cleanName := simplifyAMDName(name)
+	cleanSlot := simplifyPCISlot(slot)
+	if cleanSlot != "" {
+		return fmt.Sprintf("%s.%s", cleanName, cleanSlot)
+	}
+	if cleanName != "" && cleanName != "AMD" {
+		return cleanName
 	}
 	return fmt.Sprintf("AMD.%s", card)
+}
+
+func simplifyAMDName(name string) string {
+	clean := strings.TrimSpace(name)
+	if clean == "" {
+		return ""
+	}
+	clean = strings.ReplaceAll(clean, "AMD Instinct MI210", "MI210")
+	clean = strings.ReplaceAll(clean, "AMD MI210", "MI210")
+	clean = strings.ReplaceAll(clean, "AMD Instinct MI250X / MI250", "MI250")
+	clean = strings.ReplaceAll(clean, "AMD Instinct MI250X/MI250", "MI250")
+	clean = strings.ReplaceAll(clean, "AMD Instinct MI250", "MI250")
+	clean = strings.ReplaceAll(clean, "AMD Instinct MI300X", "MI300X")
+	clean = strings.ReplaceAll(clean, "AMD MI300X", "MI300X")
+	clean = strings.ReplaceAll(clean, "AMD Instinct MI300", "MI300")
+	clean = strings.ReplaceAll(clean, "AMD MI300", "MI300")
+	clean = strings.ReplaceAll(clean, "AMD Instinct MI325X", "MI325X")
+	clean = strings.ReplaceAll(clean, "AMD MI325X", "MI325X")
+	return clean
+}
+
+func simplifyPCISlot(slot string) string {
+	clean := strings.TrimSpace(slot)
+	if clean == "" {
+		return ""
+	}
+	clean = strings.TrimPrefix(clean, "0000:")
+	return strings.TrimSuffix(clean, ":00.0")
 }
 
 func pciSlotName(devicePath string) string {
