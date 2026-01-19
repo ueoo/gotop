@@ -23,8 +23,8 @@ help="""
 اعمال روی پروسس ها
   - <Tab>: نمایش گروه بندی پروسس ها
   - dd: SIGTERM (15) کشتن پروسس انتخاب شده یا گروهی از پروسس ها با
-  - d3: SIGQUIT (3) کشتن پروسس انتخاب شده یا گروهی از پروسس ها با 
-  - d9: SIGKILL (9) کشتن پروسس انتخاب شده یا گروهی از پروسس ها با 
+  - d3: SIGQUIT (3) کشتن پروسس انتخاب شده یا گروهی از پروسس ها با
+  - d9: SIGKILL (9) کشتن پروسس انتخاب شده یا گروهی از پروسس ها با
 
 مرتب سازی پروسس ها براساس
   - c: CPU
@@ -89,6 +89,9 @@ test="اجرای تست ها"
 conffile="فایل کانفیگ که به جای فایل دیفالت مورد استفاده قرار خواهد گرفت"
 nvidia="فعال کردن متریک های NVidia "
 nvidiarefresh="فرکانس رفرش شدن متریک ها"
+amd="فعال کردن متریک های AMD "
+no-amd="غیرفعال کردن متریک های AMD "
+amdrefresh="فرکانس رفرش شدن متریک ها"
 # TRANSLATORS: Please don't translate the **labels** ("devices", "layouts") as they don't change in the code.
 list="""
 List <devices|layouts|colorschemes|paths|keys|langs>

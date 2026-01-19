@@ -97,6 +97,9 @@ conffile="Agordi dosiero por uzi anstataŭ defaŭlte (DEVAS ESTI UNUA ARGUMENTO)
 nvidia="Ebligu NVidia GPU-metrikojn"
 no-nvidia="Malŝalti NVidia GPU-metrikojn"
 nvidiarefresh="Refreŝigi oftecon. Plej multaj tempunuoj akceptis."
+amd="Ebligu AMD GPU-metrikojn"
+no-amd="Malŝalti AMD GPU-metrikojn"
+amdrefresh="Refreŝigi oftecon. Plej multaj tempunuoj akceptis."
 # TRANSLATORS: Please don't translate the list entries
 list="""
 List <devices|layouts|colorschemes|paths|keys|langs>

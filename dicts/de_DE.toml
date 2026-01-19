@@ -97,6 +97,9 @@ conffile="Konfigurationsdatei, die anstelle der Standardeinstellung verwendet we
 nvidia="NVidia-GPU-Metriken aktivieren."
 no-nvidia="NVidia-GPU-Metriken abschalten."
 nvidiarefresh="Frequenz aktualisieren. Die meisten Zeiteinheiten werden akzeptiert."
+amd="AMD-GPU-Metriken aktivieren."
+no-amd="AMD-GPU-Metriken abschalten."
+amdrefresh="Frequenz aktualisieren. Die meisten Zeiteinheiten werden akzeptiert."
 list="""
 Auflisten von <devices|layouts|colorschemes|paths|keys|langs>
       devices: Gerätenamen für filterbare Widgets

@@ -11,39 +11,39 @@ help="""
 >c-C< ro q :tiuQ
 
 :noitagivan ssecorP
-pu :>pU< dna k -  
-nwod :>nwoD< dna j -  
-pu egap flah :>u-C< -  
-nwod egap flah :>d-C< -  
+pu :>pU< dna k -
+nwod :>nwoD< dna j -
+pu egap flah :>u-C< -
+nwod egap flah :>d-C< -
 pu egap lluf :>pUegaP< dna >b-C< -
 nwod egap lluf :>nwoDegaP< dna >f-C< -
-pot ot pmuj :>emoH< dna gg -  
-mottob ot pmuj :>dnE< dna G -  
+pot ot pmuj :>emoH< dna gg -
+mottob ot pmuj :>dnE< dna G -
 
 :snoitca ssecorP
-gnipuorg ssecorp elggot :>baT< -  
-)51( MRETGIS htiw sessecorp fo puorg ro ssecorp detceles llik :dd -  
-)3( TIUQGIS htiw sessecorp fo puorg ro ssecorp detceles llik :3d -  
-)9( LLIKGIS htiw sessecorp fo puorg ro ssecorp detceles llik :9d -  
+gnipuorg ssecorp elggot :>baT< -
+)51( MRETGIS htiw sessecorp fo puorg ro ssecorp detceles llik :dd -
+)3( TIUQGIS htiw sessecorp fo puorg ro ssecorp detceles llik :3d -
+)9( LLIKGIS htiw sessecorp fo puorg ro ssecorp detceles llik :9d -
 
 :gnitros ssecorP
-UPC :c -  
+UPC :c -
 dmC :n -
-meM :m -  
-DIP :p -  
+meM :m -
+DIP :p -
 
 :gniretlif ssecorP
-retlif gnitide trats :/ -  
-:)gnitide elihw( -  
-retlif tpecca :>retnE< -    
-retlif raelc :>epacsE< dna >c-C< -    
+retlif gnitide trats :/ -
+:)gnitide elihw( -
+retlif tpecca :>retnE< -
+retlif raelc :>epacsE< dna >c-C< -
 
 :gnilacs hparg meM dna UPC
-ni elacs :h -  
-tuo elacs :l -  
+ni elacs :h -
+tuo elacs :l -
 
 :krowteN
-dnoces rep setyb delacs dna spbm neewteb elggot :b -  
+dnoces rep setyb delacs dna spbm neewteb elggot :b -
 """
 # TRANSLATORS: Please don't translate the layout **names**
 layouts = """stuoyal ni-tliuB:
@@ -96,13 +96,16 @@ conffile=")TNEMUGRA TSRIF EB TSUM( tluafed fo daetsni esu ot elif gifnoC"
 nvidia="scirtem UPG aidiVN elbanE"
 no-nvidia="scirtem UPG aidiVN elbasiD"
 nvidiarefresh=".detpecca stinu emit tsoM .ycneuqerf hserfeR"
+amd="scirtem UPG DMA elbanE"
+no-amd="scirtem UPG DMA elbasiD"
+amdrefresh=".detpecca stinu emit tsoM .ycneuqerf hserfeR"
 list="""
 >snart|syek|shtap|semehcsroloc|stuoyal|secived< tsiL
-stegdiw elbaretlif rof seman ecived tuo stnirP :secived   
-stuoyal ni-dliub stsiL :stuoyal   
-semehcsroloc ni-tliub stsiL :semehcsroloc   
-shtap hcraes elif noitarugifnoc tuo tsiL :shtap   
-tuoyal a ni desu eb nac taht stegdiW :stegdiw   
+stegdiw elbaretlif rof seman ecived tuo stnirP :secived
+stuoyal ni-dliub stsiL :stuoyal
+semehcsroloc ni-tliub stsiL :semehcsroloc
+shtap hcraes elif noitarugifnoc tuo tsiL :shtap
+tuoyal a ni desu eb nac taht stegdiW :stegdiw
 .sgnidnib draobyek eht wohS :syek
 .snoitalsnart egaugnal detroppus wohS :sgnal"""
 write=".elif gifnoc tluafed a tuo etirW"

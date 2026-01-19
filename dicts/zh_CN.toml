@@ -97,6 +97,9 @@ conffile="用于替代缺省参数的配置文件（必须是第一个参数）"
 nvidia="启用NVidia GPU指标"
 no-nvidia="不显示NVidia GPU指标"
 nvidiarefresh="刷新频率。常见的时间单位皆可用。"
+amd="启用AMD GPU指标"
+no-amd="不显示AMD GPU指标"
+amdrefresh="刷新频率。常见的时间单位皆可用。"
 list="""
 列出 <devices|layouts|colorschemes|paths|keys|langs>
       devices: 显示可用于过滤的设备名

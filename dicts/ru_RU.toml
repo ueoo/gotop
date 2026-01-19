@@ -86,6 +86,9 @@ test="Запуск тестов и выход с успешным/проваль
 conffile="Файл конфигурации вместо того, что по умолчанию (ДОЛЖЕН БЫТЬ ПЕРВЫМ АРГУМЕНТОМ)"
 nvidia="Включить NVidia GPU метрику."
 nvidiarefresh="Частота обновления. Работает большинство единиц измерения."
+amd="Включить AMD GPU метрику."
+no-amd="Отключить AMD GPU метрику."
+amdrefresh="Частота обновления. Работает большинство единиц измерения."
 # TRANSLATORS: Please don't translate the **labels** ("devices", "layouts") as they don't change in the code.
 list="""
 Перечислить <devices|layouts|colorschemes|paths|keys|langs>

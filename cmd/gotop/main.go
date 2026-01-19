@@ -86,6 +86,7 @@ func parseArgs() error {
 	// This is so the flag package doesn't barf on an unrecognized flag; it's processed earlier
 	goopt.String([]string{"-C"}, "", tr.Value("args.conffile"))
 	nvidia := goopt.Flag([]string{"--nvidia"}, []string{"--no-nvidia"}, tr.Value("args.nvidia"), tr.Value("args.no-nvidia"))
+	amd := goopt.Flag([]string{"--amd"}, []string{"--no-amd"}, tr.Value("args.amd"), tr.Value("args.no-amd"))
 	list := goopt.String([]string{"--list"}, "", tr.Value("args.list"))
 	wc := goopt.Flag([]string{"--write-config"}, []string{}, tr.Value("args.write"), "")
 	goopt.Parse(nil)
@@ -100,11 +101,13 @@ func parseArgs() error {
 	conf.ExportPort = *exportport
 	conf.Mbps = *mbps
 	conf.Nvidia = *nvidia
+	conf.Amd = *amd
 	conf.AverageLoad = *averageload
 	conf.Test = *test
 	conf.Statusbar = *statusbar
 	conf.Mbps = *mbps
 	conf.Nvidia = *nvidia
+	conf.Amd = *amd
 	if upInt, err := time.ParseDuration(*updateinterval); err == nil {
 		conf.UpdateInterval = upInt
 	} else {
@@ -175,6 +178,17 @@ func parseArgs() error {
 	if conf.Nvidia {
 		conf.ExtensionVars["nvidia"] = "true"
 	}
+	if conf.NvidiaRefresh > 0 {
+		conf.ExtensionVars["nvidia-refresh"] = conf.NvidiaRefresh.String()
+	}
+	if hasArg("--no-amd") {
+		conf.ExtensionVars["amd"] = "false"
+	} else if conf.Amd {
+		conf.ExtensionVars["amd"] = "true"
+	}
+	if conf.AmdRefresh > 0 {
+		conf.ExtensionVars["amd-refresh"] = conf.AmdRefresh.String()
+	}
 	if *wc {
 		path, err := conf.Write()
 		if err != nil {
@@ -186,6 +200,15 @@ func parseArgs() error {
 	}
 
 	return nil
+}
+
+func hasArg(flag string) bool {
+	for _, arg := range os.Args[1:] {
+		if arg == flag {
+			return true
+		}
+	}
+	return false
 }
 
 func setDefaultTermuiColors(c gotop.Config) {

@@ -58,7 +58,7 @@ Working and tested on Linux, FreeBSD and MacOS. Windows binaries are provided, b
 If you install gotop by hand, or you download or create new layouts or colorschemes, you will need to put the layout files where gotop can find them.  To see the list of directories gotop looks for files, run `gotop -h`.  The first directory is always the directory from which gotop is run.
 
 -  **Arch**: ![](https://img.shields.io/aur/last-modified/gotop) Install from AUR, e.g. `yay -S gotop-bin`. There is also `gotop` and `gotop-git`
--  **Gentoo**: gotop is available on [guru](https://gitweb.gentoo.org/repo/proj/guru.git) overlay. 
+-  **Gentoo**: gotop is available on [guru](https://gitweb.gentoo.org/repo/proj/guru.git) overlay.
     ```shell
     sudo layman -a guru
     sudo emerge gotop
@@ -74,6 +74,7 @@ If you install gotop by hand, or you download or create new layouts or colorsche
 Extensions have proven problematic; go plugins are not usable in real-world cases, and the solution I had running for a while was hacky, at best. Consequently, extensions have been moved into the main code base for now.
 
 -  nvidia support: use the `--nvidia` flag to enable. You must have the `nvidia-smi` package installed, and gotop must be able to find the `nvidia-smi` executable, for this to work.
+-  amd support: use the `--amd` flag to enable. Linux only; requires the `amdgpu` driver and sysfs GPU metrics.
 -  remote: allows gotop to pull sensor data from applications exporting Prometheus metrics, including remote gotop instances themselves.
 
 ### Console Users
@@ -90,6 +91,7 @@ setfont Lat15-VGA16-braille.psf
 Sometimes libraries that gotop uses to introspect the hardware only support a subset of operating systems. Rather than cripple gotop to the LCD, I'm allowing features that may only work on some platforms. These will be listed here:
 
 - nvidia -- only available on systems with an nvidia GPU
+- amd -- Linux only, requires the amdgpu driver
 - SMART NVME hard drive temperatures -- Linux & Darwin
 
 ### Building
@@ -146,8 +148,8 @@ Monitoring remote machines
 gotop can monitor gotops running on remote machines and display (some of the)
 metrics within a single instance. gotop expects to be behind a proxy, or within
 a secure intranet, so while it's not exactly hard to set up, it's also not
-trivial. An example set-up is explained in the 
-[Remote Monitoring](https://github.com/xxxserxxx/gotop/blob/master/docs/remote-monitoring.md) 
+trivial. An example set-up is explained in the
+[Remote Monitoring](https://github.com/xxxserxxx/gotop/blob/master/docs/remote-monitoring.md)
 document.
 
 ## More screen shots
@@ -167,7 +169,7 @@ document.
 
 ## Contributors
 
-Many people ![](https://img.shields.io/github/contributors/xxxserxxx/gotop) have contributed code to gotop. Most of the work was by the original author, Caleb Bassi, who was seduced by the dark side (Rust) and had to be thrown into a volcano. Thanks to [everyone who's submitted a PR](https://github.com/xxxserxxx/gotop/CONTRIBUTORS.md), or otherwise contributed to the project! 
+Many people ![](https://img.shields.io/github/contributors/xxxserxxx/gotop) have contributed code to gotop. Most of the work was by the original author, Caleb Bassi, who was seduced by the dark side (Rust) and had to be thrown into a volcano. Thanks to [everyone who's submitted a PR](https://github.com/xxxserxxx/gotop/CONTRIBUTORS.md), or otherwise contributed to the project!
 
 
 ## Built With
@@ -197,7 +199,7 @@ I obviously think gotop is the Bee's Knees, but there are many alternatives. Man
 - [atop](https://www.atoptool.nl/). Detailed process-focused inspection with a table-like view. Been around for 9 long years.
 - [iftop](http://www.ex-parrot.com/~pdw/iftop/), a top for network connections.  More than just data transfer, iftop will show what interfaces are connecting to what IP addresses. Requires root access to run.
 - [iotop](http://guichaz.free.fr/iotop/), top for disk access. Tells you *which* processes are writing to and from disk space, and how much. Also requires root access to run.
-- [nmon](http://nmon.sourceforge.net) a dashboard style top; widgets can be dynamically enabled and disabled, pure ASCII rendering, so it doesn't rely on fancy character sets to draw bars. 
+- [nmon](http://nmon.sourceforge.net) a dashboard style top; widgets can be dynamically enabled and disabled, pure ASCII rendering, so it doesn't rely on fancy character sets to draw bars.
 - [ytop](https://github.com/cjbassi/ytop), a rewrite of gotop (ca. 3.0) in Rust.  Same great UI, different programming language.
 - [slabtop](https://gitlab.com/procps-ng/procps), part of procps-ng, looks like top but provides kernel slab cache information! Requires root.
 - [systemd-cgtop](https://www.github.com/systemd/systemd), comes with systemd (odds are your system uses systemd, so this is already installed), provides a resource use view of control groups -- basically, which services are using what resources. Does *not* require root to run.
