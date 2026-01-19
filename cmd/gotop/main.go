@@ -87,6 +87,7 @@ func parseArgs() error {
 	goopt.String([]string{"-C"}, "", tr.Value("args.conffile"))
 	nvidia := goopt.Flag([]string{"--nvidia"}, []string{"--no-nvidia"}, tr.Value("args.nvidia"), tr.Value("args.no-nvidia"))
 	amd := goopt.Flag([]string{"--amd"}, []string{"--no-amd"}, tr.Value("args.amd"), tr.Value("args.no-amd"))
+	apple := goopt.Flag([]string{"--apple"}, []string{"--no-apple"}, tr.Value("args.apple"), tr.Value("args.no-apple"))
 	list := goopt.String([]string{"--list"}, "", tr.Value("args.list"))
 	wc := goopt.Flag([]string{"--write-config"}, []string{}, tr.Value("args.write"), "")
 	goopt.Parse(nil)
@@ -102,12 +103,14 @@ func parseArgs() error {
 	conf.Mbps = *mbps
 	conf.Nvidia = *nvidia
 	conf.Amd = *amd
+	conf.Apple = *apple
 	conf.AverageLoad = *averageload
 	conf.Test = *test
 	conf.Statusbar = *statusbar
 	conf.Mbps = *mbps
 	conf.Nvidia = *nvidia
 	conf.Amd = *amd
+	conf.Apple = *apple
 	if upInt, err := time.ParseDuration(*updateinterval); err == nil {
 		conf.UpdateInterval = upInt
 	} else {
@@ -188,6 +191,14 @@ func parseArgs() error {
 	}
 	if conf.AmdRefresh > 0 {
 		conf.ExtensionVars["amd-refresh"] = conf.AmdRefresh.String()
+	}
+	if hasArg("--no-apple") {
+		conf.ExtensionVars["apple"] = "false"
+	} else if conf.Apple {
+		conf.ExtensionVars["apple"] = "true"
+	}
+	if conf.AppleRefresh > 0 {
+		conf.ExtensionVars["apple-refresh"] = conf.AppleRefresh.String()
 	}
 	if *wc {
 		path, err := conf.Write()

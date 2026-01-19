@@ -100,6 +100,9 @@ nvidiarefresh="Refreŝigi oftecon. Plej multaj tempunuoj akceptis."
 amd="Ebligu AMD GPU-metrikojn"
 no-amd="Malŝalti AMD GPU-metrikojn"
 amdrefresh="Refreŝigi oftecon. Plej multaj tempunuoj akceptis."
+apple="Enable Apple GPU metrics."
+no-apple="Disable Apple GPU metrics."
+applerefresh="Refresh frequency. Most time units accepted."
 # TRANSLATORS: Please don't translate the list entries
 list="""
 List <devices|layouts|colorschemes|paths|keys|langs>

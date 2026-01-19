@@ -89,6 +89,9 @@ nvidiarefresh="Частота обновления. Работает больш�
 amd="Включить AMD GPU метрику."
 no-amd="Отключить AMD GPU метрику."
 amdrefresh="Частота обновления. Работает большинство единиц измерения."
+apple="Enable Apple GPU metrics."
+no-apple="Disable Apple GPU metrics."
+applerefresh="Refresh frequency. Most time units accepted."
 # TRANSLATORS: Please don't translate the **labels** ("devices", "layouts") as they don't change in the code.
 list="""
 Перечислить <devices|layouts|colorschemes|paths|keys|langs>

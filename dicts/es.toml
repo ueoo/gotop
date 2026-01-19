@@ -100,6 +100,9 @@ nvidiarefresh="Frecuencia de actualización. Se aceptan la mayoría de las unida
 amd="Habilitar métrica de AMD GPU"
 no-amd="Inutilizar métrica de AMD GPU"
 amdrefresh="Frecuencia de actualización. Se aceptan la mayoría de las unidades de tiempo."
+apple="Enable Apple GPU metrics."
+no-apple="Disable Apple GPU metrics."
+applerefresh="Refresh frequency. Most time units accepted."
 # TRANSLATORS: Please don't translate the **labels** ("devices", "layouts") as they don't change in the code.
 list="""
 Lista <devices|layouts|colorschemes|paths|keys|langs>

@@ -100,6 +100,9 @@ nvidiarefresh="刷新频率。常见的时间单位皆可用。"
 amd="启用AMD GPU指标"
 no-amd="不显示AMD GPU指标"
 amdrefresh="刷新频率。常见的时间单位皆可用。"
+apple="Enable Apple GPU metrics."
+no-apple="Disable Apple GPU metrics."
+applerefresh="Refresh frequency. Most time units accepted."
 list="""
 列出 <devices|layouts|colorschemes|paths|keys|langs>
       devices: 显示可用于过滤的设备名

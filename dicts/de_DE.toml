@@ -100,6 +100,9 @@ nvidiarefresh="Frequenz aktualisieren. Die meisten Zeiteinheiten werden akzeptie
 amd="AMD-GPU-Metriken aktivieren."
 no-amd="AMD-GPU-Metriken abschalten."
 amdrefresh="Frequenz aktualisieren. Die meisten Zeiteinheiten werden akzeptiert."
+apple="Enable Apple GPU metrics."
+no-apple="Disable Apple GPU metrics."
+applerefresh="Refresh frequency. Most time units accepted."
 list="""
 Auflisten von <devices|layouts|colorschemes|paths|keys|langs>
       devices: Gerätenamen für filterbare Widgets

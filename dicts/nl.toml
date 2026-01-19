@@ -100,6 +100,9 @@ nvidiarefresh="De ververstussenpoos. De meeste tijdeenheden worden geaccepteerd.
 amd="Toon AMD-gpu-statistieken;"
 no-amd="Verberg AMD-gpu-statistieken;"
 amdrefresh="De ververstussenpoos. De meeste tijdeenheden worden geaccepteerd."
+apple="Enable Apple GPU metrics."
+no-apple="Disable Apple GPU metrics."
+applerefresh="Refresh frequency. Most time units accepted."
 # TRANSLATORS: Please don't translate the **labels** ("devices", "layouts") as they don't change in the code.
 list="""
 Lijst met <devices|layouts|colorschemes|paths|keys|langs>

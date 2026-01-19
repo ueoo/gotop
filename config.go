@@ -51,6 +51,8 @@ type Config struct {
 	NvidiaRefresh        time.Duration
 	Amd                  bool
 	AmdRefresh           time.Duration
+	Apple                bool
+	AppleRefresh         time.Duration
 }
 
 // FIXME parsing can't handle blank lines
@@ -210,6 +212,18 @@ func load(in io.Reader, conf *Config) error {
 				return fmt.Errorf(conf.Tr.Value("config.err.line", ln, err.Error()))
 			}
 			conf.AmdRefresh = d
+	case apple:
+		av, err := strconv.ParseBool(kv[1])
+		if err != nil {
+			return fmt.Errorf(conf.Tr.Value("config.err.line", ln, err.Error()))
+		}
+		conf.Apple = av
+	case applerefresh:
+		d, err := time.ParseDuration(kv[1])
+		if err != nil {
+			return fmt.Errorf(conf.Tr.Value("config.err.line", ln, err.Error()))
+		}
+		conf.AppleRefresh = d
 		}
 	}
 
@@ -291,6 +305,10 @@ func marshal(c *Config) []byte {
 	fmt.Fprintf(buff, "%s=%t\n", amd, c.Amd)
 	fmt.Fprintln(buff, "# To configure the AMD refresh rate, set a duration:")
 	fmt.Fprintln(buff, "#amdrefresh=30s")
+	fmt.Fprintln(buff, "# Enable Apple GPU metrics.")
+	fmt.Fprintf(buff, "%s=%t\n", apple, c.Apple)
+	fmt.Fprintln(buff, "# To configure the Apple refresh rate, set a duration:")
+	fmt.Fprintln(buff, "#applerefresh=30s")
 	return buff.Bytes()
 }
 
@@ -313,4 +331,6 @@ const (
 	nvidiarefresh        = "nvidiarefresh"
 	amd                  = "amd"
 	amdrefresh           = "amdrefresh"
+	apple                = "apple"
+	applerefresh         = "applerefresh"
 )

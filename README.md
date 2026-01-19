@@ -75,6 +75,7 @@ Extensions have proven problematic; go plugins are not usable in real-world case
 
 -  nvidia support: use the `--nvidia` flag to enable. You must have the `nvidia-smi` package installed, and gotop must be able to find the `nvidia-smi` executable, for this to work.
 -  amd support: use the `--amd` flag to enable. Linux only; requires the `amdgpu` driver and sysfs GPU metrics.
+-  apple support: use the `--apple` flag to enable. macOS only; uses Metal + IOKit.
 -  remote: allows gotop to pull sensor data from applications exporting Prometheus metrics, including remote gotop instances themselves.
 
 ### Console Users
@@ -92,6 +93,7 @@ Sometimes libraries that gotop uses to introspect the hardware only support a su
 
 - nvidia -- only available on systems with an nvidia GPU
 - amd -- Linux only, requires the amdgpu driver
+- apple -- macOS only, reports Apple GPU usage and memory
 - SMART NVME hard drive temperatures -- Linux & Darwin
 
 ### Building

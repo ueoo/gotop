@@ -99,6 +99,9 @@ nvidiarefresh=".detpecca stinu emit tsoM .ycneuqerf hserfeR"
 amd="scirtem UPG DMA elbanE"
 no-amd="scirtem UPG DMA elbasiD"
 amdrefresh=".detpecca stinu emit tsoM .ycneuqerf hserfeR"
+apple="Enable Apple GPU metrics."
+no-apple="Disable Apple GPU metrics."
+applerefresh="Refresh frequency. Most time units accepted."
 list="""
 >snart|syek|shtap|semehcsroloc|stuoyal|secived< tsiL
 stegdiw elbaretlif rof seman ecived tuo stnirP :secived

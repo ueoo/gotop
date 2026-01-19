@@ -92,6 +92,9 @@ nvidiarefresh="فرکانس رفرش شدن متریک ها"
 amd="فعال کردن متریک های AMD "
 no-amd="غیرفعال کردن متریک های AMD "
 amdrefresh="فرکانس رفرش شدن متریک ها"
+apple="Enable Apple GPU metrics."
+no-apple="Disable Apple GPU metrics."
+applerefresh="Refresh frequency. Most time units accepted."
 # TRANSLATORS: Please don't translate the **labels** ("devices", "layouts") as they don't change in the code.
 list="""
 List <devices|layouts|colorschemes|paths|keys|langs>
